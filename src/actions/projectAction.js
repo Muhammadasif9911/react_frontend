@@ -2,7 +2,7 @@ import axios from 'axios'
 import { GET_ERRORS, GET_WALLETS, DELETE_WALLET, GET_WALLET } from './types'
 
 export const createWallet = (newWallet, history) => async dispatch => {
-    await axios.post('http://localhost:8080/course', newWallet)
+    await axios.post('/blood', newWallet)
         .then((res) => {
             history.push('/dashboard')
         })
@@ -12,9 +12,9 @@ export const createWallet = (newWallet, history) => async dispatch => {
 }
 
 export const updateWallet = (id,updateWallet, history) => async dispatch => {
-    let url = `http://localhost:8080/course/${id}`;
+    let url = `/blood/${id}`;
     console.log(history);
-    await axios.put(`http://localhost:8080/course/${id}`, updateWallet)
+    await axios.put(`/blood/${id}`, updateWallet)
          .then((res) => {
              history.push('/dashboard')
          })
@@ -26,7 +26,7 @@ export const updateWallet = (id,updateWallet, history) => async dispatch => {
 
 
 export const getWallets = () => async dispatch => {
-    await axios.get('http://localhost:8080/course')
+    await axios.get('/blood')
         .then((res) => {
             
             dispatch({ type: GET_WALLETS, payload: res.data })
@@ -36,7 +36,7 @@ export const getWallets = () => async dispatch => {
 
 
 export const deleteWallet = (id) => async dispatch => {
-    await axios.delete(`http://localhost:8080/course/${id}`)
+    await axios.delete(`/blood/${id}`)
         .then((res) => {
             
             dispatch({ type: DELETE_WALLET, payload: id })
@@ -46,7 +46,7 @@ export const deleteWallet = (id) => async dispatch => {
 
 export const getWallet = (id) => async dispatch => {
 
-    await axios.get(`http://localhost:8080/course/${id}`)
+    await axios.get(`/blood/${id}`)
          .then((res) => {
             
             dispatch({ type: GET_WALLET, payload: res.data })

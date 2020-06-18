@@ -8,14 +8,16 @@ class Welcome extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 text-center">
-                                <h1 className="display-3 mb-4">Events Managnment System</h1>
+                                <h1 className="display-3 mb-4">Blood Donation Management System</h1>
                                 <p className="lead">
-                                    Create your account to manage your Events
+                                    Create your account to donate your Events
                             </p>
                                 <hr />
-                                <a href="register.html" className="btn btn-lg btn-primary mr-2">
+                                <a href="/signup" className="btn btn-lg btn-primary mr-2">
+                                
                                     Sign Up
                             </a>
+                            
                                 <a href="login.html" className="btn btn-lg btn-secondary mr-2">
                                     Login
                             </a>

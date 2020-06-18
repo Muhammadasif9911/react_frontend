@@ -20,21 +20,21 @@ class Dashboard extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1 className="display-4 text-center">Course Regestration</h1>
+                            <h1 className="display-4 text-center">blood donation</h1>
                             <br />
                             <div className="btn-group">
                                 <button type="button" className="btn btn-info btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Create new
+                                    Donate blood
                             </button>
                                 <div className="dropdown-menu">
-                                    <Link className="dropdown-item" to="/createcourse">New Course</Link>
+                                    <Link className="dropdown-item" to="/create">New</Link>
                                     <button disabled className="dropdown-item">..</button>
                                 </div>
                             </div>
                             <br />
                             <div className="card text-center">
                                 <div className="card-header bg-success text-white">
-                                    <h4>Current Course </h4>
+                                    <h4>Donations </h4>
                                     
                                 </div>
                             </div>

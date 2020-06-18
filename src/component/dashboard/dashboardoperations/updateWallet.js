@@ -10,12 +10,9 @@ class UpdateWallet extends Component {
         this.state = {
             id:'',
             name: '',
-            regNumber: '',
-            semester: '',
-            courseName: '',
-            courseCode:'',
-            creditHours:'',
-            priority:'3',
+            BlooodGroup: '',
+            gender: '',
+            mobile: '',
             errors: ''
 
         }
@@ -29,12 +26,10 @@ class UpdateWallet extends Component {
             this.setState({
                 id:nextProps.wallet.id,
                 name: nextProps.wallet.name,
-                regNumber: nextProps.wallet.regNumber,
-                semester: nextProps.wallet.semester,
-                priority: nextProps.wallet.priority,
-                courseCode:nextProps.wallet.courseCode,
-                courseName:nextProps.wallet.courseName,
-                creditHours:nextProps.wallet.creditHours
+                BloodGroup: nextProps.wallet.BloodGroup,
+                gender: nextProps.wallet.gender,
+                mobile: nextProps.wallet.mobile
+              
             })
         }
     }
@@ -52,12 +47,9 @@ class UpdateWallet extends Component {
         const updateWallet = {
             id:this.state.id,
             name: this.state.name,
-            regNumber: this.state.regNumber,
-            semester: this.state.semester,
-            priority: this.state.priority,
-            courseCode:this.state.courseCode,
-            courseName:this.state.courseName,
-            creditHours:this.state.creditHours
+            BloodGroup: this.state.BloodGroup,
+            gender: this.state.gender,
+            mobile: this.state.mobile
         }
         this.props.updateWallet(this.state.id,updateWallet,this.props.history)
         event.preventDefault()
@@ -74,44 +66,28 @@ class UpdateWallet extends Component {
                             <hr />
                             <form onSubmit={(event) => this.submitHandler(event)}>
                                 <div className="form-group">
-                                    <input type="text" value={this.state.name} onChange={(event) => this.changeHandler(event, "name")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.name })} placeholder="Student  Name" />
+                                    <input type="text" value={this.state.name} onChange={(event) => this.changeHandler(event, "name")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.name })} placeholder=" Name" />
                                     <p className="text-danger">{this.state.errors.name}</p>
                                 </div>
 
                                 <div className="form-group">
-                                    <input type="text" value={this.state.regNumber} onChange={(event) => this.changeHandler(event, "regNumber")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.regNumber })} placeholder="Student RegNumber" />
-                                    <p className="text-danger">{this.state.errors.regNumber}</p>
+                                    <input type="text" value={this.state.BloodGroup} onChange={(event) => this.changeHandler(event, "BloodGroup")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.BloodGroup })} placeholder=" " />
+                                    <p className="text-danger">{this.state.errors.BloodGroup}</p>
                                 </div>
 
                                 <div className="form-group">
-                                    <textarea value={this.state.semester} onChange={(event) => this.changeHandler(event, "semester")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.semester })} placeholder="Semester"></textarea>
-                                    <p className="text-danger">{this.state.errors.semester}</p>
+                                    <textarea value={this.state.gender} onChange={(event) => this.changeHandler(event, "gender")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.gender })} placeholder="gender "></textarea>
+                                    <p className="text-danger">{this.state.errors.gender}</p>
                                 </div>
 
 
 
                                 <div className="form-group">
-                                    <textarea value={this.state.courseName} onChange={(event) => this.changeHandler(event, "courseName")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.courseName })} placeholder="Course Name"></textarea>
-                                    <p className="text-danger">{this.state.errors.courseName}</p>
+                                    <textarea value={this.state.mobile} onChange={(event) => this.changeHandler(event, "mobile")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.mobile })} placeholder="mobile no"></textarea>
+                                    <p className="text-danger">{this.state.errors.mobile}</p>
                                 </div>
 
-                                <div className="form-group">
-                                    <textarea value={this.state.courseCode} onChange={(event) => this.changeHandler(event, "courseCode")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.courseCode })} placeholder="Course Code"></textarea>
-                                    <p className="text-danger">{this.state.errors.courseCode}</p>
-                                </div>
-
-                                <div className="form-group">
-                                    <textarea value={this.state.creditHours} onChange={(event) => this.changeHandler(event, "creditHours")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.creditHours })} placeholder="Credit Hours"></textarea>
-                                    <p className="text-danger">{this.state.errors.creditHours}</p>
-                                </div>
-                                <div className="form-group">
-                                    <select value={this.state.priority} className="form-control form-control-lg" onChange={(event) => this.changeHandler(event, "priority")}>
-                                        <option value={3}>Event Priority</option>
-                                        <option value={1}>High</option>
-                                        <option value={2}>Medium</option>
-                                        <option value={3}>Low</option>
-                                    </select>
-                                </div>
+                               
 
                                 <input onClick={(event) => this.submitHandler(event)} className="btn btn-primary btn-block mt-4" value="Update" />
                             </form>

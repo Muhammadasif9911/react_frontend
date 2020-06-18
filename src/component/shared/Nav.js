@@ -8,7 +8,7 @@ class Nav extends Component {
             <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
                 <div className="container">
                     <Link className="navbar-brand" to="/">
-                        Course Regestration
+                        Blood Donation
                 </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
                         <span className="navbar-toggler-icon" />
@@ -17,17 +17,22 @@ class Nav extends Component {
                     <div className="collapse navbar-collapse" id="mobile-nav">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/dashboard">
+                                <Link className="nav-link" to={'/dashboard'}>
                                     Dashboard
                             </Link>
                             </li>
                         </ul>
 
                         <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                        <a className="nav-link" href="login.html">
+                            View Profile
+                    </a>
+                    </li>
                             <li className="nav-item">
-                                <a className="nav-link " href="register.html">
-                                    Sign Up
-                            </a>
+                            <Link className="nav-link" to={'/signup'}>
+                            signup
+                    </Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="login.html">

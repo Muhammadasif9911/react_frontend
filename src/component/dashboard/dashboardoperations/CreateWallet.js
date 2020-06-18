@@ -9,12 +9,9 @@ class CreateWallet extends Component {
 
         this.state = {
             name: '',
-            regNumber: '',
-            semester: '',
-            courseName: '',
-            courseCode:'',
-            creditHours:'',
-            priority:'',
+            BlooodGroup: '',
+            gender: '',
+            mobile: '',
             errors: ''
 
         }
@@ -34,11 +31,9 @@ class CreateWallet extends Component {
     submitHandler = (event) => {
         const newWallet = {
             name: this.state.name,
-            regNumber: this.state.regNumber,
-            semester: this.state.semester,
-            courseName: this.state.courseName,
-            courseCode:this.state.courseCode,
-            creditHours:this.state.creditHours
+            BloodGroup: this.state.BloodGroup,
+            gender: this.state.gender,
+            mobile: this.state.mobile
         }
         this.props.createWallet(newWallet, this.props.history)
         event.preventDefault()
@@ -51,48 +46,32 @@ class CreateWallet extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <h5 className="display-4 text-center">Register New Course </h5>
+                            <h5 className="display-4 text-center">Donate Now ! </h5>
                             <hr />
                             <form onSubmit={(event) => this.submitHandler(event)}>
                                 <div className="form-group">
-                                    <input type="text" onChange={(event) => this.changeHandler(event, "name")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.name })} placeholder="Student Name" />
+                                    <input type="text" onChange={(event) => this.changeHandler(event, "name")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.name })} placeholder="Name" />
                                     <p className="text-danger">{this.state.errors.name}</p>
                                 </div>
 
                                 <div className="form-group">
-                                    <input type="text" onChange={(event) => this.changeHandler(event, "regNumber")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.regNumber })} placeholder="Student RegNumber" />
-                                    <p className="text-danger">{this.state.errors.regNumber}</p>
+                                    <input type="text" onChange={(event) => this.changeHandler(event, "BloodGroup")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.regNumber })} placeholder="your blood group" />
+                                    <p className="text-danger">{this.state.errors.BloodGroup}</p>
                                 </div>
 
                                 <div className="form-group">
-                                    <input onChange={(event) => this.changeHandler(event, "semester")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.semester })} placeholder="Semester" />
-                                    <p className="text-danger">{this.state.errors.semester}</p>
+                                    <input onChange={(event) => this.changeHandler(event, "gender")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.semester })} placeholder="Gender" />
+                                    <p className="text-danger">{this.state.errors.gender}</p>
                                 </div>
 
 
 
                                 <div className="form-group">
-                                <input onChange={(event) => this.changeHandler(event, "courseName")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.courseName })} placeholder="Course Name" />
-                                <p className="text-danger">{this.state.errors.courseName}</p>
+                                <input onChange={(event) => this.changeHandler(event, "mobile")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.courseName })} placeholder="enter mobile No." />
+                                <p className="text-danger">{this.state.errors.mobile}</p>
                                 </div>
 
-                                <div className="form-group">
-                                <input onChange={(event) => this.changeHandler(event, "courseCode")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.courseCode })} placeholder="Course Code" />
-                                <p className="text-danger">{this.state.errors.courseCode}</p>
-                                </div>
-
-                                <div className="form-group">
-                                <input onChange={(event) => this.changeHandler(event, "creditHours")} className={classnames("form-control form-control-lg", { "is-invalid": this.state.errors.creditHours })} placeholder="Course creditHours" />
-                                <p className="text-danger">{this.state.errors.creditHours}</p>
-                                </div>
-                                <div className="form-group">
-                                    <select className="form-control form-control-lg" onChange={(event) => this.changeHandler(event, "priority")}>
-                                        <option value={3}>Event Priority</option>
-                                        <option value={1}>High</option>
-                                        <option value={2}>Medium</option>
-                                        <option value={3}>Low</option>
-                                    </select>
-                                </div>
+                            
 
                                 <input type="submit" className="btn btn-primary btn-block mt-4" value="Create" />
                             </form>
